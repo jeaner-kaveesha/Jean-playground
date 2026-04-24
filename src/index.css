@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-emerald-500: #50C878;
+  --color-accent: #50C878;
+}
+
+@layer base {
+  :root {
+    --vscode-bg: #ffffff;
+    --vscode-sidebar: #f3f3f3;
+    --vscode-border: #e5e5e5;
+    --emerald-500: #10b981;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+  }
+
+  .dark {
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-border: #3c3c3c;
+    --emerald-500: #50c878;
+    --text-primary: #cccccc;
+    --text-secondary: #888888;
+  }
+
+  body {
+    @apply bg-[var(--vscode-bg)] text-[var(--text-primary)] antialiased transition-all duration-500;
+  }
+}
+
+/* VS Code Style Scrollbars */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(121, 121, 121, 0.2);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(121, 121, 121, 0.4);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Smooth Transitions & Animations */
+.animate-slide-up {
+  animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Code Editor Specifics */
+.cm-editor {
+    outline: none !important;
+}
+
+.cm-scroller {
+    @apply overflow-auto;
+}
+
+/* Glassmorphism Accents */
+.glass-panel {
+    @apply bg-black/80 backdrop-blur-md border border-white/10;
+}

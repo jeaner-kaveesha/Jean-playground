@@ -1,0 +1,6 @@
+{
+  "name": "Jean Playground",
+  "description": "A professional playground for the Jean programming language featuring a multi-tab editor, VFS, and WAT/WASM compilation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
